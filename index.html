@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0">
+  <title>
+    To-do List by Vaibhav
+  </title>
+  <link rel="stylesheet" href="style4.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body background=td.webp>
+<div class="headline">
+    <h2>Vaibhav's To-Do List</h2>
+
+    <section class="sec1">
+    <input type="text" id="myInput" placeholder="Enter your Task">
+    <div class="but">
+      <span onclick="newElement()" class="addBtn">Add-Task</span>
+    </div>
+    </section>
+
+
+</div>
+<div class="yt" align="center">
+  Your tasks
+</div>
+<ul id="myUL">
+
+</ul>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+</section>
+
+</div>
+<section class="bott">
+  <div class="s1">
+ <h1 class"logo-text"><span>&nbsp;&nbsp;&nbsp;Vaibhav's_</span>TO-DO List</h1>
+ <p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type your tasks in input box and get a list
+ </p>
+
+</div>
+
+<div class="s2">
+</br>&nbsp;&nbsp;&nbsp;call us for more information
+<span></br></br>&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-phone">:</i>7058783789,8668690389 </span>
+</div>
+<div class="s3">
+</br>&nbsp;For similar projects,Approach us,
+</br>
+<span><br>&nbsp;&nbsp;<i class="fa-solid fa-envelope"></i>&nbsp; vetalvaibhav64@gmail.com</span>
+</div>
+<div class="s4">
+</br>
+ &nbsp;&nbsp;&nbsp;Our social media platforms:
+</br>
+&nbsp;&nbsp;
+ <a href="https://www.facebook.com/profile.php?id=100010901762509" target="-blank"><i class="fa-brands fa-facebook-f"></i>:Facebook link</a>
+</br>
+&nbsp;&nbsp;
+<a href="https://www.instagram.com/invites/contact/?i=1juocpahqhsdo&utm_content=3pax94w" target="_blank"><i class="fa-brands fa-instagram" ></i>:Instagram link</a>
+</br>
+&nbsp;&nbsp;
+<a href="https://wa.me/qr/NUDSXFIIZPP7J1" target="_blank"><i class="fa-brands fa-square-whatsapp"></i>:Whatsapp link</a>
+
+</div>
+</section>
+
+<div class="copy" align="center">
+&copy; TO-DO task list | Designed by: Vaibhav Vetal.
+</div>
+<div class="touch"></div>
+
+
+
+<script>
+
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("Please enter a task");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>
